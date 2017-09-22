@@ -2,6 +2,9 @@
 
 
 def generate(content):
+    content = content.replace('\n', '')
+    for _ in range(8):
+        content = content.replace('  ', ' ')
     escaped = content.replace('\\', '\\\\').replace('"', '\\"')
     return content.replace('@', escaped)
 
